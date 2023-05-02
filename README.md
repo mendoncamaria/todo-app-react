@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+### run the code
+npm start
+
+### optimized build
+npm run build
+
+### dependencies
+
+npm install firebase
+npm install dotenv
+
+error faced: while moving keys to env file, the code broke and gave errors. So had to eject
