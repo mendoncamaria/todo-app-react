@@ -18,12 +18,14 @@ const Todo = () => {
   const collectionRef = collection(db, 'tasks');
 
   const [task, setTask] = useState([]);
+  // eslint-disable-next-line
   const [checked, setChecked] = useState([]);
   const [createTask, setCreateTask] = useState([]);
 
   useEffect(() => {
     const getTasks = async () => {
-      let queryForTimeStamp = query(collectionRef, orderBy('timestamp'));
+      // eslint-disable-next-line
+      let queryForTimeStamp = query((collection(db, 'tasks')), orderBy('timestamp'));
       await getDocs(queryForTimeStamp)
         .then((task) => {
           let taskData = task.docs.map((doc) => ({
@@ -88,7 +90,7 @@ const Todo = () => {
       await runTransaction(db, async (transaction) => {
         const todoDoc = await transaction.get(docRef);
         if (!todoDoc.exists()) {
-          throw 'Document does not exist!';
+          alert("Document not found!!")
         }
         const newValue = !todoDoc.data().isChecked;
         transaction.update(docRef, { isChecked: newValue });
